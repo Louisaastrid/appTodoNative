@@ -12,7 +12,9 @@ export default function App() {
     setTask(null);
   }
    const completeTask = (index) => {
-     setTaskItems(()=>taskItems.filter(todo=>todo.id!= index))
+     let itemsCopy=[...taskItems];
+     itemsCopy.splice(index, 1);
+     setTaskItems(itemsCopy);
    }
   return (
     <View style={styles.container}>
@@ -24,6 +26,7 @@ export default function App() {
       >
       {/* Today's tasks */}
          <View style={styles.textsWrapper}>
+           
            <Text style={styles.sectionTitle}>Mes Tâches du jours</Text>
               <View style={styles.items}>
                 {/* This is where the task will go */}
