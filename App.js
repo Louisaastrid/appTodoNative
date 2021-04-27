@@ -27,7 +27,7 @@ export default function App() {
       {/* Today's tasks */}
          <View style={styles.textsWrapper}>
            
-           <Text style={styles.sectionTitle}>Mes Tâches du jours</Text>
+           <Text style={styles.sectionTitle}>Ma liste du jour</Text>
               <View style={styles.items}>
                 {/* This is where the task will go */}
                 {
@@ -39,11 +39,7 @@ export default function App() {
                     )
                   })
                 }
-                {/* <Task text={'trouver un traiteur'}/>
-                <Task text={'trouver un fleurite'}/> */}
-            
               </View>
-
           </View>
           </ScrollView>
           {/* Write a task */}
@@ -51,7 +47,6 @@ export default function App() {
           behavior={Platform.OS === "ios" ? "padding":'height'}
           style={styles.writeTaskWrapper}>
             <TextInput style={styles.input} placeholder={'ecrit ta tâche'} value ={task} onChangeText={text=>setTask(text)}/>
-
             <TouchableOpacity onPress={()=>handleAddTask()}>
               <View style={styles.addWrapper}>
                 <Text style={styles.addText}>+</Text>
